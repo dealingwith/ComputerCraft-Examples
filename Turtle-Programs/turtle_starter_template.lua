@@ -17,11 +17,45 @@ function left()
   turtle.turnLeft()
 end
 
+function forward()
+  turtle.forward()
+end
+
+function shiftRight()
+  right()
+  forward()
+  left()
+end
+
+function shiftLeft()
+  left()
+  forward()
+  right()
+end
+
+function dig()
+  if turtle.detect() then
+    turtle.dig()
+  end
+end
+
+function dump(start_point,end_point)
+  for i=start_point,end_point,1 do
+    turtle.select(i)
+    turtle.drop()
+  end
+end
+
+function turnAround()
+  right()
+  right()
+end
+
 function fif(val, a, b)
   if val then a() else b() end
 end
 
-function fif_flip(val, a, b)
+function fifFlip(val, a, b)
   if val then a() else b() end
   return not val
 end
