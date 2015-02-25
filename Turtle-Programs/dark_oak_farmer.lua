@@ -104,7 +104,7 @@ end
 go = true
 while go do
   go = fuel()
-  go = turtle.getItemCount(2) > 3
+  go = turtle.getItemCount(3) > 3
   tree = false
   tries = 0
   while not detectTree() do
